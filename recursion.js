@@ -16,7 +16,7 @@ function product(nums) {
 
 /** longest: return the length of the longest word in an array of words. */
 
-function longest(words, longestWord='') {
+function longest(words, longestWord = '') {
   //base case when the arr is empty, return
   if (words.length === 0) return longestWord.length;
   //recursive case
@@ -33,26 +33,59 @@ function longest(words, longestWord='') {
 /** everyOther: return a string with every other letter. */
 
 function everyOther(str) {
-  //base case is the count > str.length
 
-  //recursive case if
+  //base case
+  if (str === "") return "";
+
+  //recursive case
+  return str[0] + everyOther(str.slice(2));
 }
 
 /** find: return boolean depending on if val exists in array or not. */
 
 function find(arr, val) {
 
+  // base case
+  if (arr.length === 0) return false;
+
+  // recursive case
+  if (arr[0] === val) {
+    return true;
+  } else {
+    return find(arr.slice(1), val);
+  }
 }
 
 /** isPalindrome: checks whether a string is a palindrome or not. */
 
 function isPalindrome(str) {
+  console.log(str);
+
+  // base case
+  if (str.length < 2) return true;
+
+  // recursive case
+  if (str[0] === str[str.length-1]) {
+    return isPalindrome(str.slice(1, -1))
+  } else {
+    return false
+  }
 
 }
 
 /** revString: return a copy of a string, but in reverse. */
 
 function revString(str) {
+  console.log(str);
+
+  // base case
+  if (str.length === 0) return "";
+
+  // recursive case
+  console.log("***", str[0])
+  return revString(str.slice(1)) + str[0]
+
+  // grab reversed chars here below rec. call
 
 }
 
