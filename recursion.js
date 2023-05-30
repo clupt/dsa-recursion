@@ -82,10 +82,7 @@ function revString(str) {
   if (str.length === 0) return "";
 
   // recursive case
-  console.log("***", str[0])
   return revString(str.slice(1)) + str[0]
-
-  // grab reversed chars here below rec. call
 
 }
 
