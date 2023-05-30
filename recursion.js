@@ -16,18 +16,12 @@ function product(nums) {
 
 /** longest: return the length of the longest word in an array of words. */
 
-function longest(words, longestWord = '') {
-  //base case when the arr is empty, return
-  if (words.length === 0) return longestWord.length;
+function longest(words){
+
+  //base case when arr is empty
+  if(!words.length) return 0;
   //recursive case
-  for (let word of words) {
-    if (word.length > longestWord.length) {
-      // count++;
-      longestWord = word;
-    }
-    longest(words.slice(1), longestWord);
-  }
-  return longestWord.length;
+  return Math.max(longest(words.slice(1)), words[0].length)
 }
 
 /** everyOther: return a string with every other letter. */
@@ -89,8 +83,22 @@ function revString(str) {
 /** findIndex: return the index of val in arr (or -1 if val is not present). */
 
 function findIndex(arr, val) {
-
+  //base case - if not found in array, return -1
+  //base case - if val is found return 0
+  if(!arr.length) return -1;
+  console.log("arr.length=", arr.length, "arr=", arr);
+  console.log("arr[0]=", arr[0]);
+  if(arr[0] === val) return 0;
+  //recursive case
+  let indexFound = 1 + findIndex(arr.slice(1), val);
+  console.log("indexFound=", indexFound);
+  if(indexFound !== 0){
+    return indexFound;
+  } else {
+    return -1;
+  }
 }
+
 
 /** gatherStrings: given an object, return an array of all of the string values. */
 
