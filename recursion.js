@@ -17,8 +17,6 @@ function product(nums) {
 /** longest: return the length of the longest word in an array of words. */
 
 function longest(words, longestWord='') {
-  // ['a', 'an', 'ant', 'be']
-  //   *
   //base case when the arr is empty, return
   if (words.length === 0) return longestWord.length;
   //recursive case
@@ -32,22 +30,12 @@ function longest(words, longestWord='') {
   return longestWord.length;
 }
 
-// function longest(words) {
-//   let longestWord = '';
-//   let count = 0;
-//   while(count < words.length){
-//     if(words[count].length > longestWord.length){
-//       longestWord = words[count];
-//     }
-//     count++;
-//   }
-//   return longestWord.length;
-// }
-
 /** everyOther: return a string with every other letter. */
 
 function everyOther(str) {
+  //base case is the count > str.length
 
+  //recursive case if
 }
 
 /** find: return boolean depending on if val exists in array or not. */
