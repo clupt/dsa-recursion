@@ -103,8 +103,14 @@ function findIndex(arr, val) {
 /** gatherStrings: given an object, return an array of all of the string values. */
 
 function gatherStrings(obj) {
-
+  let stringArr = [];
+  for (let key in obj) {
+    if (typeof obj[key] === "string") stringArr.push(obj[key]);
+    if (typeof obj[key] === "object") stringArr.push(...gatherStrings(obj[key]));
+  }
+  return stringArr;
 }
+
 
 // FURTHER STUDY
 
